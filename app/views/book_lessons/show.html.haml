@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @book_lesson.title
+%p
+  %b Content:
+  = @book_lesson.content
+%p
+  %b Course:
+  = @book_lesson.course
+
+= link_to 'Edit', edit_book_lesson_path(@book_lesson)
+\|
+= link_to 'Back', book_lessons_path

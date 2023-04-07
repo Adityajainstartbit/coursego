@@ -1,0 +1,54 @@
+%h1 Listing lessons
+
+%table.table
+  %thead
+    %tr
+      %th Lname
+      %th Title
+      %th ranking
+      %th order by
+
+      %th
+      %th
+      %th
+
+  %tbody
+    - @lessons.each do |lesson|
+      %tr
+        %td= lesson.lname
+        %td= lesson.title
+        %td= lesson.row_order
+        %td= lesson.row_order_rank+1
+        %td= link_to 'Show', lesson,class:'btn btn-warning  '
+        %td= link_to 'Edit', edit_lesson_path(lesson),class:'btn btn-success'
+        %td= link_to 'Destroy', lesson, method: :delete,class:'btn btn-primary', data: { confirm: 'Are you sure?' }
+
+%br
+  %ul#sortable
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 1
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 2
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 3
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 4
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 5
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 6
+    %li.ui-state-default
+      %span.ui-icon.ui-icon-arrowthick-2-n-s>
+      Item 7
+
+
+/ =@lessons.row_order
+= link_to 'New Lesson', new_lesson_path,class:'btn btn-success text-center'
+
+

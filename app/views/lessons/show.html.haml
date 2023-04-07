@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Lname:
+  = @lesson.lname
+%p
+  %b Title:
+  = @lesson.title
+
+
+= link_to 'Edit', edit_lesson_path(@lesson)
+\|
+= link_to 'Back', lessons_path
+/ = link_to("Previous Post", @lesson.prev) if @lesson.prev
+= link_to("<", @lesson.previous_post) if @lesson.previous_post 
+= link_to("Next Post", @lesson.next_post) if @lesson.next_post 
+
+/ - unless @lesson.prev.nil?
+/   = link_to 'pre',lessons_path(@lesson.prev)
+

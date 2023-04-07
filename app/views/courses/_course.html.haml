@@ -1,0 +1,27 @@
+.card
+  .card-header
+    .fa.fa-book
+   
+    = link_to course.title,course
+
+  .card-body
+    .fa.fa-lightbulb	
+    =course.description
+    =course.avatar.attached?
+   
+
+   
+  .card-footer
+    .fa.fa-usd
+   
+    = number_to_currency(course.price)
+    .fa.fa-language
+    =course.language
+    .fa.fa-book
+    =course.book_lessons.count
+  .card-footer
+   
+    = link_to 'Show', course,class: 'btn btn-success '
+    = link_to 'Edit', edit_course_path(course) ,class: 'btn btn-info '
+    = link_to 'Destroy', course ,class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }
+
