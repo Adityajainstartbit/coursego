@@ -19,8 +19,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
-    # @book_lessons = @courses.book_lessons
-    # @book_lessons = @course.book_lessons
+    
   end
 
   # GET /courses/new

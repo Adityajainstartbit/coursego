@@ -6,9 +6,8 @@
 =render 'courses/course', course: @course
 
 
-= render 'book_lessons/lesson',book_lessons:@book_lessons
 
-/ = link_to 'Edit', edit_course_path(@course)
-/ \|
-/ = link_to 'Back', courses_path
+= link_to 'Edit', edit_course_path(@course)
+\|
+= link_to 'Back', courses_path
 
